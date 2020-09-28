@@ -27,8 +27,8 @@ while (True):
         friend.append(name)
         print("添加成功！")
     elif (i == 2):
-        name=input("请输入要删除好友姓名")
-        if(friend.count(name)):
+        name=input("请输入要删除好友姓名：")
+        if(friend.count(name)==0):
             print("对不起，此好友不存在")
         else:
             friend.remove(name)
@@ -36,9 +36,11 @@ while (True):
     elif (i == 3):
         name=input("请输入要修改的好友姓名：")
         name2=input("请输入备注名：")
-        index_name=friend.index(name)
+        friend.remove(name)
+        friend.append(name2)
+        print("备注成功")
     elif (i == 4):
-        print()
+        print(f"我的好友列表是{friend}")
     elif (i == 5):
         print("您已退出")
         exit()
